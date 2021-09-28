@@ -1,11 +1,14 @@
+# 4673 셀프 넘버
+
 numbers = set(range(1, 10001))
 not_self_numbers = set()
 
 
-def d(n):  # d(n)함수
+def d(num):  # d(n): n과 n의 각 자리수를 더하는 함수
+    sum = num
     for i in str(num):
-        n += int(i)
-    return n
+        sum += int(i)
+    return sum
 
 
 for num in (numbers):
