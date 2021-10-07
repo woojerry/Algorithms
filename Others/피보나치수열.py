@@ -30,6 +30,11 @@ def dynamic_breed(n):
         return 0
     if(n < len(heues)):
         return heues[n]
-    value = dynamic_breed(n-1) + dynamic_breed(n-2)
+    value = dynamic_breed(n-1)+dynamic_breed(n-2)
     heues.append(value)
-    
+    return value
+
+
+for i in range(1, 12):
+    print(dynamic_breed(i), end='\t')
+print(dynamic_breed(60))
