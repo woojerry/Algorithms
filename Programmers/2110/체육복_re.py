@@ -7,8 +7,10 @@ def solution(n, lost, reserve):
     for i in set_reserve:
         if i-1 in set_lost:
             set_lost.remove(i-1)
+            set_reserve.remove(i)
         elif i+1 in set_lost:
             set_lost.remove(i+1)
+            set_reserve.remove(i)
 
     answer = n - len(set_lost)
     return answer

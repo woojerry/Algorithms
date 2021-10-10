@@ -8,6 +8,3 @@ times = []
 for _ in range(N):
     start, end = map(int, input().split())
     times.append((start, end))
-
-
-print(times)
