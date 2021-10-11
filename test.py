@@ -11,10 +11,16 @@
 # board = [[0, 0, 0, 0, 0], [0, 0, 1, 0, 3], [
 #     0, 2, 5, 0, 1], [4, 2, 4, 4, 2], [3, 5, 1, 3, 1]]
 
-user = {}
-record = ["Enter uid1234 Muzi", "Enter uid4567 Prodo",
-          "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"]
-for words in record:
-    #action, uid, nickname = words.split()
-    #user[uid] = nickname
-    print(words.split()[0])
+# user = {}
+# record = ["Enter uid1234 Muzi", "Enter uid4567 Prodo",
+#           "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"]
+# for words in record:
+#     #action, uid, nickname = words.split()
+#     #user[uid] = nickname
+#     print(words.split()[0])
+
+
+from collections import deque
+a = [2, 1, 3, 2]
+queue = deque((i, v) for i, v in enumerate(a))
+print(max(queue)[0])
