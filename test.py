@@ -19,8 +19,6 @@
 #     #user[uid] = nickname
 #     print(words.split()[0])
 
+num = list(map(int, str(10)))
 
-from collections import deque
-a = [2, 1, 3, 2]
-queue = deque((i, v) for i, v in enumerate(a))
-print(max(queue)[0])
+print(num)
