@@ -22,8 +22,3 @@
 # num = list(map(int, str(10)))
 
 # print(num)
-
-
-number = 1234
-num = list(map(int, str(number)))
-print(num)

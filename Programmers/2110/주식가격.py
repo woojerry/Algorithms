@@ -8,7 +8,7 @@ def solution(prices):
     answer = []
     queue = deque(prices)
 
-    while(queue):
+    while queue:
         price = queue.popleft()
         term = 0
         for i in queue:
@@ -26,9 +26,9 @@ def solution(prices):
     answer = []
     for i in range(len(prices)):
         term = 0
-        for j in prices[i+1:]:
+        for j in range(i+1, len(prices)):  # prices[i+1:]일 때는 시간 초과
             term += 1
-            if prices[i] > j:
+            if prices[i] > prices[j]:
                 break
         answer.append(term)
 
