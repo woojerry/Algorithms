@@ -22,3 +22,7 @@
 # num = list(map(int, str(10)))
 
 # print(num)
+dict = {'하이': 300, '헬로': 180}
+for i in dict.keys():
+    print(i)
+print(len(dict))

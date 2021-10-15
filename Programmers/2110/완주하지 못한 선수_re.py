@@ -16,7 +16,7 @@ def solution(participant, completion):
     answer = ''
     dict = {}
     for i in participant:
-        dict[i] = dict.get(i, 0) + 1
+        dict[i] = dict.get(i, 0) + 1  # dict에 i가 없는 경우 0리턴
 
     for j in completion:
         dict[j] -= 1
