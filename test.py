@@ -22,7 +22,12 @@
 # num = list(map(int, str(10)))
 
 # print(num)
-dict = {'하이': 300, '헬로': 180}
-for i in dict.keys():
-    print(i)
-print(len(dict))
+
+# b = '10e'
+# b = b.replace('10', 'a')
+# print(b)
+
+test = {1: (1, 1), 2: (2, 2)}
+
+if 5 in test:
+    print(True)
