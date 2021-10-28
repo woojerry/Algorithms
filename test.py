@@ -12,6 +12,7 @@
 # # for i in str(time_interval):
 # #     print(i)
 
-N = 3
-visited = [[0] * N for _ in range(N)]
-print(visited)
+
+te = [[60, 50], [30, 70], [60, 30], [80, 40]]
+for w, h in te:
+    print(w)

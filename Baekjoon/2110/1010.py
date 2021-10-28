@@ -5,7 +5,7 @@ T = int(input())
 for i in range(T):
     N, M = map(int, input().split())
 
-    answer = 1
+    answer = 1  # 조합 그대로의 공식으로
     for a in range(1, M+1):
         answer *= a
     for b in range(1, N+1):
