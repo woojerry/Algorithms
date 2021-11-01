@@ -1,13 +1,13 @@
 def solution(id_list, k):
     answer = 0
-    dict = {}
+    dic = {}
     for i in id_list:
         ids = list(set(map(str, i.split())))
         for j in ids:
-            if dict.get(j) == k:
+            if dic.get(j) == k:
                 continue
             else:
-                dict[j] = dict.get(j, 0) + 1
+                dic[j] = dic.get(j, 0) + 1
                 answer += 1
     return answer
 
