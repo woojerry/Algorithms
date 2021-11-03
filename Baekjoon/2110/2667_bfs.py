@@ -33,7 +33,6 @@ def bfs(r, c):
                 continue
 
             if graph[nr][nc] == 1 and visited[nr][nc] == 0:  # 집이 있고, 방문을 한적이 없으면
-                graph[nr][nc] = 0
                 visited[nr][nc] = 1
                 queue.append((nr, nc))
                 cnt += 1

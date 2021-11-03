@@ -2,7 +2,6 @@
 
 def solution(str1, str2):
     answer = 0
-    list1, list2 = [], []
     dic1, dic2 = {}, {}
 
     for i in range(len(str1)):

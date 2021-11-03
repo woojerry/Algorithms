@@ -1,5 +1,5 @@
 # 10/29
-# 18352 특정 거리의 도시 찾기
+# 18352 특정 거리의 도시 찾기 # 단방향 그래프
 
 from collections import deque
 import sys
