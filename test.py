@@ -1,34 +1,46 @@
-def solution(n, jump):
-    arr = [[0] * n for _ in range(n)]  # 1
-    row = 0  # 2
-    col = 0  # 2
-    cnt = 1  # 3
-    trans = 1  # 4
-    arr[0][0] = 1
-    number = 1
-    while number > (n*n):
-        col_size, row_size = n
-        # for i in range(n):  # 6
-        # 가로 이동
-        # while col < n:
-        while True:
-            col += (jump-1)
-            if col > col_size:
-                col = n-1
-                col_size -= 1
+dr = [1, -1, 0, 0]
+dc = [0, 0, -1, 1]
+
+
+def solution(places):
+    answer = []
+
+    for place in places:
+        place = [list(line) for line in place]
+        flag = False
+        for r in range(5):
+            for c in range(5):
+                if place[r][c] == "P":
+                    place[r][c] = "O"
+                    if not dfs(2, r, c, place):
+                        answer.append(0)
+                        flag = True
+                        break
+                    place[r][c] = "P"
+
+            if flag:
                 break
-            else:
-                number += 1
-                arr[row][col] = cnt
+        else:
+            answer.append(1)
 
-        # n -= 1  # 7
-        for j in range(n):  # 8
-            row += trans
-            arr[row][col] = cnt
-            cnt += 1
-        trans *= -1  # 9
-    print(arr)
-    return arr
+    return answer
 
 
-print(snail(5))
+def dfs(count, r, c, place):
+    if count < 2 and place[r][c] == "P":
+        return False
+
+    if count == 0:
+        return True
+
+    for i in range(4):
+        cr = r + dr[i]
+        cc = c + dc[i]
+
+        if not 0 <= cr < 5 or not 0 <= cc < 5 or place[cr][cc] == "X":
+            continue
+
+        if not dfs(count - 1, cr, cc, place):
+            return False
+
+    return True
