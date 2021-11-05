@@ -5,9 +5,10 @@
 # dir = [left_down, right_up]
 # left_down이면 r,c를 (1,-1) 경계에 닿으면 row만 +1 (1,0)
 # right_up이면 r,c를 (-1,1) 경계에 닿으면 column +1
+
 N = int(input())
-dr = [1, -1]
-dc = [-1, 1]
+dr = [1, -1]  # left down
+dc = [-1, 1]  # right up
 
 
 dir = 0
