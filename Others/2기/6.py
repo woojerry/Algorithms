@@ -16,15 +16,6 @@ def solution(forms):
                 answer.append(email)
                 break
 
-    # for member in forms:
-    #     email, nickname = member[0], member[1]
-    #     for word in word_cand:
-    #         if word_cand[word] > 1:
-    #             if word in nickname:
-    #                 answer.append(email)
-
-    #answer = sorted(list(set(answer)))
-
     return sorted(answer)
 
 
