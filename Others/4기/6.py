@@ -19,6 +19,7 @@ def solution(time, plans):
 
         if time >= cost:
             answer = country
+            time -= cost  # 이거 안했음
 
     return answer
 

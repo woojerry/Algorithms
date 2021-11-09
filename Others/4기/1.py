@@ -1,9 +1,6 @@
-
-
 def solution(arr):
     answer = [0] * 3
     storage = [0] * 3
-    dic = {}
 
     for i in arr:
         if i == 1:

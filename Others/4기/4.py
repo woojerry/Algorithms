@@ -4,7 +4,7 @@ def solution(s):
     cont = 1
     tmp = ''
     for i in range(len(s)):
-        print(answer)
+        # print(answer)  # ?
         if i == 0:  # 처음
             first = s[i]
             tmp = s[i]
@@ -19,10 +19,10 @@ def solution(s):
 
             last = s[i]
             if first == last:
-                # print(answer)
-                answer[0] += answer[-1]
-                length = len(answer)
-                answer = answer[0: (length-1)]
+                if len(answer) != 1:  # 이거 안함
+                    answer[0] += answer[-1]
+                    length = len(answer)
+                    answer = answer[0: (length-1)]
 
         else:
             if s[i] == tmp:  # 연속됐을 때
@@ -41,3 +41,5 @@ def solution(s):
 
 # print(solution("aaabbaaa"))
 print(solution("wowwow"))
+print(solution("vvavv"))
+print(solution("aaa"))

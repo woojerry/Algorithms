@@ -48,3 +48,5 @@ def solution(rows, columns):
 
 #print(solution(3, 4))
 print(solution(3, 3))
+print(solution(3, 9))
+print(solution(4, 8))
