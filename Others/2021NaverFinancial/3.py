@@ -9,6 +9,8 @@ def solution(logs):
         user, num, score = log.split()
         dic[user][num] = score
 
+    print(dic)
+
     for i in dic:
         for j in dic:
             if i == j:
