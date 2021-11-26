@@ -1,25 +1,30 @@
+# 1번 관계선 인접리스트로 저장하고 쿼리 마다 x,y 최대최소잡고 4변 따라 관계선 찾아보면서 최대최소 밖으로 나가는 관계선 있으면 다 짜르고 카운팅해서 답 배열에 어펜드
+def make_rect(r1, c1, r2, c2):
+    if r1 == r2:
+        return [(r1, c1), (r1, c2)]
+    # elif c1 == c2
+
 
 def solution(rows, columns, connections, queries):
     answer = []
-
-    #graph = [ [0, 7 ,5], [7, 0 , INF], [5, INF, 0] ]
-
     graph = [[[] for _ in range(columns)] for _ in range(rows)]
-    #graph = [[]]
     print(graph)
-    # graph[0][0].append((1, 1))
-    # print(graph)
 
-    for i in connections:
+    for i in connections:  # 초기 그래프
         a, b, c, d = i[0]-1, i[1]-1, i[2]-1, i[3]-1
-        # graph[a][b] = (c, d)
         graph[a][b].append((c, d))
         graph[c][d].append((a, b))
-    # first, second = (i[0], i[1]), (i[2], i[3])
-    # print(first, second)
-    # graph[first[0][first[1]]] = second
+    print(graph[0])
 
-    print(graph)
+    # for j in queries:
+    #     r1, c1, r2, c2 = j[0]-1, j[1] - 1, j[2]-1, j[3] - 1
+    #     if r1 == r2:
+    #         if c2 >= c1:
+    #         else:
+    #     elif c1 == c2:
+    #     else:
+    #         for pos in graph[r1][c1]:
+    #             if pos[0] < r1 or pos[1]
 
     return answer
 
