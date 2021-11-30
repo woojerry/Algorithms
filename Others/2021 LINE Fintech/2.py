@@ -41,7 +41,7 @@ def solution(arr):
     for j in cand_list:
         answer += j
 
-    answer = answer % (math.pow(10, 9) + 7)
+    answer = answer % ((10 ** 9) + 7)
     return int(answer)
 
 
