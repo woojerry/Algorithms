@@ -1,4 +1,4 @@
-# 12/9
+# 12/09
 # 14225 부분수열의 합
 
 from itertools import combinations
