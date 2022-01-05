@@ -1,2 +1,2 @@
-t = '1234'
-print(t[-1])
+test = [1, 2, 3, 4]
+print(test[:])
