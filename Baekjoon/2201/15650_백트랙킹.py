@@ -1,5 +1,5 @@
-# 10/16
-# 15649 N과M(1)
+# 01/12
+# 15650 N과M(2)
 
 # 백트랙킹
 N, M = map(int, input().split())
@@ -7,17 +7,16 @@ N, M = map(int, input().split())
 result = []
 
 
-def Back():
+def Back(start):
     if len(result) == M:
-        print(' '.join(map(str, result)))  # ' '와 join하기 위해 str로
+        print(' '.join(map(str, result)))
     else:
-        for i in range(1, N+1):
-            # print(i)
+        for i in range(start, N+1):
             if i not in result:
                 #print(i, result)
                 result.append(i)
-                Back()
+                Back(i+1)
                 result.pop()
 
 
-Back()
+Back(1)
