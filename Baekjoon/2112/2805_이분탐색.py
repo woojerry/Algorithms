@@ -1,3 +1,7 @@
+# 12/03
+# 2805 나무 자르기
+# 이분탐색
+
 import sys
 read = sys.stdin.readline
 
