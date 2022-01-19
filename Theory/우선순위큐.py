@@ -6,7 +6,7 @@
 
 # 힙정렬: O(NlogN)
 
-import heapq  # minheap
+import heapq  # 파이썬에서는 minheap으로 되어있음
 
 
 def heapsort(iterable):

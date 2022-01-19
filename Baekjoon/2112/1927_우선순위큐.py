@@ -10,9 +10,9 @@ h = []
 for _ in range(N):
     x = int(read())
     if x == 0:
-        if len(h) == 0:
+        if len(h) == 0:  # 배열이 비어있는 경우
             print(0)
-        else:
+        else:  # 배열에서 가장 작은 값을 출력하고 그 값을 배열에서 제거
             print(heapq.heappop(h))
 
     else:
