@@ -1,23 +1,14 @@
-import sys
-read = sys.stdin.readline
+import string
 
-N, M = map(int, read().split())
-trees = list(map(int, read().split()))
+tmp = string.digits+string.ascii_lowercase
 
-start, end = 0, max(trees)
 
-while start <= end:
-    sums = 0
-    mid = (start + end) // 2
-    # for tree in trees:
-    #     if tree > mid:
-    #         sum += tree - mid
-    sums = sum([tree-mid if tree > mid else 0 for tree in trees])
-
-    if sums < M:
-        end = mid - 1
+def convert(num, base):
+    q, r = divmod(num, base)
+    if q == 0:
+        return tmp[r]
     else:
-        answer = mid
-        start = mid + 1
+        return convert(q, base) + tmp[r]
 
-print(answer)
+
+print(convert(437674, 9))
