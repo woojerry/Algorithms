@@ -1,14 +1,15 @@
-import string
+def check_prime(num):
+    is_prime = [True] * (num+1)
+    is_prime[0] = False
+    is_prime[1] = False
 
-tmp = string.digits+string.ascii_lowercase
+    for i in range(2, int(num ** 0.5) + 1):
+        if is_prime[i] == True:
+            for j in range(2 * i, num+1, i):
+                is_prime[j] = False
+
+    print(is_prime)
+    return is_prime[num]
 
 
-def convert(num, base):
-    q, r = divmod(num, base)
-    if q == 0:
-        return tmp[r]
-    else:
-        return convert(q, base) + tmp[r]
-
-
-print(convert(437674, 9))
+print(check_prime(12))

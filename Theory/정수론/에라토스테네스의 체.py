@@ -9,5 +9,3 @@ for i in range(2, int(n ** 0.5) + 1):   # 2부터 n의 제곱근까지
         primes.append(i)
         for j in range(2 * i, n + 1, i):  # i를 제외한 2 * i부터 모든 배수 지움
             is_prime[j] = False
-
-print(primes)
