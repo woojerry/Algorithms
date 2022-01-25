@@ -6,7 +6,7 @@ N = int(input())
 M = int(input())
 
 parent = [0] * (N+1)
-nodes = []
+edges = []
 
 
 def find(a):
@@ -30,17 +30,17 @@ def union(a, b):
 
 for _ in range(M):
     a, b, cost = map(int, input().split())
-    nodes.append((a, b, cost))
+    edges.append((a, b, cost))
 
-nodes.sort(key=lambda x: x[2])
+edges.sort(key=lambda x: x[2])
 connect_count = 0
 answer = 0  # 최소 비용
 
 for i in range(1, N+1):
     parent[i] = i
 
-for node in nodes:
-    a, b, c = node
+for edge in edges:
+    a, b, c = edge
     #  현재 선택된 간선의 두개 정점이 연결된 상태가 아니라면 연결
     if find(a) != find(b):
         union(a, b)
