@@ -1,15 +1,27 @@
-def check_prime(num):
-    is_prime = [True] * (num+1)
-    is_prime[0] = False
-    is_prime[1] = False
-
-    for i in range(2, int(num ** 0.5) + 1):
-        if is_prime[i] == True:
-            for j in range(2 * i, num+1, i):
-                is_prime[j] = False
-
-    print(is_prime)
-    return is_prime[num]
+from sys import stdin
 
 
-print(check_prime(12))
+n, m = map(int, stdin.readline().split())
+
+numbers = [[0] * (n + 1)]
+
+for _ in range(n):
+    nums = [0] + [int(x) for x in stdin.readline().split()]
+    numbers.append(nums)
+
+# prefix sum 행렬 만들기
+
+# 1. 행 별로 더하기
+for i in range(1, n + 1):
+    for j in range(1, n):
+        numbers[i][j + 1] += numbers[i][j]
+
+# 2. 열 별로 더하기
+for j in range(1, n + 1):
+    for i in range(1, n):
+        numbers[i + 1][j] += numbers[i][j]
+
+for _ in range(m):
+    x1, y1, x2, y2 = map(int, stdin.readline().split())
+
+print(numbers)

@@ -1,6 +1,6 @@
 # 11/19
 # 11659 구간 합 구하기 4
-# segment tree?
+# 누적합
 
 import sys
 input = sys.stdin.readline
