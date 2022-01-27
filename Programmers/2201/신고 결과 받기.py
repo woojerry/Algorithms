@@ -1,3 +1,6 @@
+# 01/27
+# 풀긴 풀었으나 코드가 지저분 -> 리팩토링
+# 해시, 딕셔너리 컴프리헨션
 
 def solution(id_list, report, k):
     answer = []
