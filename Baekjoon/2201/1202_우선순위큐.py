@@ -15,6 +15,7 @@ for _ in range(N):
 for _ in range(K):
     bags.append(int(read()))
 
+print()
 bags.sort()
 answer = 0
 h = []
