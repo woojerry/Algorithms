@@ -1,5 +1,11 @@
+# 02/18
+# 수식찾기 + 완전탐색
+
+# 가로: x, 세로: y
+# xy = brown * yellow
+# 2x + 2y -4 = brown
+
 def solution(brown, yellow):
-    
     total = brown + yellow
     for x in range(1, total +1):
         if total % x == 0:
@@ -9,5 +15,3 @@ def solution(brown, yellow):
                  answer = [x,y]
     
     return answer
-
-print(solution(10,2))

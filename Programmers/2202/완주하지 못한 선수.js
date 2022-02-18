@@ -1,4 +1,6 @@
 // 02/17
+// Hash
+
 function solution(participant, completion) {
   var answer = "";
 

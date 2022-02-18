@@ -1,4 +1,6 @@
 // 02/17
+// sort
+
 function solution(array, commands) {
   var answer = [];
 
