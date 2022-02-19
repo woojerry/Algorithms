@@ -7,7 +7,6 @@ def solution(bridge_length, weight, truck_weights):
     bridge_weight = 0
     
     while queue:
-        print(answer, truck_queue, bridge_weight)
         answer += 1
         bridge_weight -= queue.popleft()
         
@@ -19,7 +18,6 @@ def solution(bridge_length, weight, truck_weights):
             else:
                 queue.append(0)
                 
-    
     return answer
 
 print(solution(2,10,[7,4,5,6]))
