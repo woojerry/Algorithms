@@ -8,6 +8,9 @@ def solution(id_list, report, k):
 
     dictionary = {name: [] for name in id_list}
     dictionary2 = {name: 0 for name in id_list}
+    
+    print(dictionary)
+    print(dictionary2)
 
     for i in filtered_report:
         a, b = i.split()
