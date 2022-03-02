@@ -1,2 +1,14 @@
-people = [(21,'Junkyu'),(21,'Dohyun'),(20,'Sunyoung')]
-print(sorted(people,key= lambda x: (-x[0],x[1]))) # 숫자는 내림차순으로
+N, K = map(int, input().split())
+coins = []
+for _ in range(N):
+    coins.append(int(input()))
+
+answer = 0
+coins.sort(reverse=True)
+for i in range(N):
+    print(K, coins[i])
+    if K % coins[i] != K:
+        answer += K // coins[i]
+        K = K % coins[i]
+        
+print(answer)
