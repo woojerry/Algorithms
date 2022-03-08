@@ -29,6 +29,7 @@ for _ in range(T):
 
     count = 0
 
+    # 바깥에 '.'로 입구 만들기
     for i in graph:
         i.insert(0, '.')
         i.append('.')
