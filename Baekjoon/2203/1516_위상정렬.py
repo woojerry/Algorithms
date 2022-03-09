@@ -3,7 +3,6 @@
 # 위상정렬
 
 from collections import deque
-import queue
 import sys
 read = sys.stdin.readline
 
