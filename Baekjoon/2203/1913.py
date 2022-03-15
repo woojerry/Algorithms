@@ -29,8 +29,6 @@ while pivot > 0:
             graph[r][c] = num
     dir = (dir + 1) % 4
 
-print(dir, pivot, num)
-
 for i in range(N):
     for j in range(N):
         print(graph[i][j], end=' ')
@@ -38,4 +36,4 @@ for i in range(N):
             ans_r, ans_c = i, j
     print()
 
-print(ans_r, ans_c)
+print(ans_r+1, ans_c+1)
