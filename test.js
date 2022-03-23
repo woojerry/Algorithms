@@ -1,15 +1,15 @@
-this.$suggestions.querySelectorAll('li').forEach((el ,idx) => {
-  if(el.classList === 'Suggestion__item--selected'){
-      current = idx
-      el.classList.remove('Suggestion__item--selected')
+function solution(s) {
+  let count = 0;
+
+  for (const c of s) {
+    if (c === "(") {
+      count += 1;
+    } else {
+      if (count === 0) {
+        return false;
+      }
+      count -= 1;
+    }
   }
+  return count === 0;
 }
-  
-this.$suggestions.querySelectorAll('li').forEach((el, idx) => {
-  if(idx === current + 2){
-      el.classList.add('Suggestion__item--selected')
-  }
-})
-
-
-

@@ -14,7 +14,7 @@ for i in range(1, N):
 costs.sort()
 
 answer = 0
-print(costs)
+
 if K != 0:
     for i in range(N-K):
         answer += costs[i]
