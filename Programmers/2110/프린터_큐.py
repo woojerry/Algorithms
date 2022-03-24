@@ -16,6 +16,7 @@ def solution(priorities, location):
             break
 
         if J[0] >= max(queue)[0]:
+            print(max(queue))
             printer.append(J)
             answer += 1
             if J[1] == location:

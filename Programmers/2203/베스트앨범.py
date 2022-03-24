@@ -1,3 +1,6 @@
+# 03/24
+# 해시 + 정렬
+
 def solution(genres, plays):
     answer = []
 
@@ -20,10 +23,3 @@ def solution(genres, plays):
             answer.append(song_num)
 
     return answer
-
-
-# print(solution(["classic", "pop", "classic",
-#       "classic", "pop"], [500, 600, 150, 800, 2500]))
-
-print(solution(['a', 'b', 'c', 'd', 'a', 'd', 'd', 'd', 'a', 'a', 'c', 'c'], [
-      100, 300, 400, 150, 100, 300, 200, 600, 700, 110, 900, 9000]))
