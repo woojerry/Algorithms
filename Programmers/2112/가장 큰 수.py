@@ -11,6 +11,7 @@ def solution(numbers):
     new_numbers.sort(reverse=True, key=lambda x: x[1])
     # 문자열은 앞에서부터 비교하므로
     answer = ''
+    print(new_numbers)
 
     for nt in new_numbers:
         answer += str(nt[0])

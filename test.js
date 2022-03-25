@@ -1,57 +1,61 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
-
-class Queue {
+class MaxHeap {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.heap = [null]; // 0번은 null
   }
-  enqueue(newValue) {
-    const newNode = new Node(newValue);
-    if (this.head === null) {
-      this.head = this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+
+  push(value) {
+    this.heap.push(value);
+    let currentIndex = this.heap.length - 1;
+    let parentIndex = Math.floor(currentIndex / 2);
+
+    while (parentIndex !== 0 && this.heap[parentIndex] < value) {
+      const temp = this.heap[parentIndex];
+      this.heap[parentIndex] = value;
+      this.heap[currentIndex] = temp;
+
+      currentIndex = parentIndex;
+      parentIndex = Math.floor(currentIndex / 2);
     }
   }
 
-  dequeue() {
-    const value = this.head.value;
-    this.head = this.head.next;
-    return value;
-  }
+  pop() {
+    const returnValue = this.heap[1];
+    this.heap[1] = this.heap.pop();
 
-  peek() {
-    return this.head.value;
-  }
-}
-
-function solution(priorities, location) {
-  const queue = new Queue();
-  for (let i = 0; i < priorities.length; i += 1) {
-    queue.enqueue([priorities[i], i]);
-  }
-
-  priorities.sort((a, b) => b - a);
-
-  let count = 0;
-  while (true) {
-    const currentValue = queue.peek();
-    if (currentValue[0] < priorities[count]) {
-      queue.enqueue(queue.dequeue());
-    } else {
-      const value = queue.dequeue();
-      count += 1;
-      if (location === value[1]) {
-        return count;
+    let currentIndex = 1;
+    let leftIndex = 2;
+    let rightIndex = 3;
+    while (
+      this.heap[currentIndex] < this.heap[leftIndex] ||
+      this.heap[currentIndex] < this.heap[rightIndex]
+    ) {
+      if (this.heap[leftIndex] < this.heap[rightIndex]) {
+        const temp = this.heap[currentIndex];
+        this.heap[currentIndex] = this.heap[rightIndex];
+        this.heap[rightIndex] = temp;
+        currentIndex = rightIndex;
+      } else {
+        const temp = this.heap[currentIndex];
+        this.heap[currentIndex] = this.heap[leftIndex];
+        this.heap[leftIndex] = temp;
+        currentIndex = leftIndex;
       }
+      leftIndex = currentIndex * 2;
+      rightIndex = currentIndex * 2 + 1;
     }
+    return returnValue;
   }
-
-  return count;
 }
+
+const heap = new MaxHeap();
+heap.push(3);
+heap.push(1);
+heap.push(4);
+heap.push(2);
+console.log(heap.heap);
+const array = [];
+array.push(heap.pop());
+array.push(heap.pop());
+array.push(heap.pop());
+array.push(heap.pop());
+console.log(array);
