@@ -1,61 +1,25 @@
-class MaxHeap {
-  constructor() {
-    this.heap = [null]; // 0번은 null
-  }
+function solution(number, k) {
+  const stack = [];
+  let count = 0;
 
-  push(value) {
-    this.heap.push(value);
-    let currentIndex = this.heap.length - 1;
-    let parentIndex = Math.floor(currentIndex / 2);
-
-    while (parentIndex !== 0 && this.heap[parentIndex] < value) {
-      const temp = this.heap[parentIndex];
-      this.heap[parentIndex] = value;
-      this.heap[currentIndex] = temp;
-
-      currentIndex = parentIndex;
-      parentIndex = Math.floor(currentIndex / 2);
+  for (const num of number) {
+    while (count < k && stack[stack.length - 1] < num) {
+      stack.pop();
+      count += 1;
     }
+    stack.push(num);
+  }
+  console.log(stack);
+
+  while (count < k) {
+    stack.pop();
+    count += 1;
   }
 
-  pop() {
-    const returnValue = this.heap[1];
-    this.heap[1] = this.heap.pop();
+  console.log(stack.join(""));
 
-    let currentIndex = 1;
-    let leftIndex = 2;
-    let rightIndex = 3;
-    while (
-      this.heap[currentIndex] < this.heap[leftIndex] ||
-      this.heap[currentIndex] < this.heap[rightIndex]
-    ) {
-      if (this.heap[leftIndex] < this.heap[rightIndex]) {
-        const temp = this.heap[currentIndex];
-        this.heap[currentIndex] = this.heap[rightIndex];
-        this.heap[rightIndex] = temp;
-        currentIndex = rightIndex;
-      } else {
-        const temp = this.heap[currentIndex];
-        this.heap[currentIndex] = this.heap[leftIndex];
-        this.heap[leftIndex] = temp;
-        currentIndex = leftIndex;
-      }
-      leftIndex = currentIndex * 2;
-      rightIndex = currentIndex * 2 + 1;
-    }
-    return returnValue;
-  }
+  return stack.join("");
 }
 
-const heap = new MaxHeap();
-heap.push(3);
-heap.push(1);
-heap.push(4);
-heap.push(2);
-console.log(heap.heap);
-const array = [];
-array.push(heap.pop());
-array.push(heap.pop());
-array.push(heap.pop());
-array.push(heap.pop());
-console.log(array);
+//console.log(solution("1924", 2));
+console.log(solution("4177252841"), 4);

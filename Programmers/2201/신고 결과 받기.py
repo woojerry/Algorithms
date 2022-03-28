@@ -8,7 +8,7 @@ def solution(id_list, report, k):
 
     dictionary = {name: [] for name in id_list}
     dictionary2 = {name: 0 for name in id_list}
-    
+
     print(dictionary)
     print(dictionary2)
 
